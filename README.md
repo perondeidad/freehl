@@ -32,7 +32,7 @@ $ git clone https://code.idtech.space/fn/valve valve
 $ SKIP_UPDATE=1 SKIP_RADIANT=1 ./build_game.sh valve
 ```
 
-Tambien puedes ir a `make` dentro de `valve/src/`, pero no creara un archive`entities.def`  para usar con Radiant (una familia de editores de niveles).
+Tambien puedes ir a `make` dentro de `valve/src/`, pero no creara un archivo `entities.def`  para usar con Radiant (una familia de editores de niveles).
 
 ## Notes
 The engine should automatically detect Half-Life when placed within the game directory, however you may need to pass `-halflife` just in case you have one massive directory with multiple FTE-supported games in it for example.
