@@ -31,6 +31,7 @@ Clone el repositorio valve (no te preocupes, es el mismo que el de aqui con solo
 $ git clone https://code.idtech.space/fn/valve valve
 $ SKIP_UPDATE=1 SKIP_RADIANT=1 ./build_game.sh valve
 ```
+Obviamente, asegúrese de que Nuclide tenga preparado fteqw y fteqcc para compilarlo y tener algun conocimiento en QuakeC
 
 Tambien puedes ir a `make` dentro de `valve/src/`, pero no creara un archivo `entities.def`  para usar con Radiant (una familia de editores de niveles).
 
