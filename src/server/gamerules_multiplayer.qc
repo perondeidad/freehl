@@ -133,7 +133,38 @@ HLMultiplayerRules::PlayerDeath(NSClientPlayer pl)
 		float gibStrength = g_dmg_iDamage * 2.0f;
 		BreakModel_Entity(pl, gibDir, gibStrength);
 	} else {
-		FX_Corpse_Spawn((player)pl, ANIM_DIESIMPLE);
+		float deathAnimation = ANIM_DIESIMPLE;
+
+		switch (g_dmg_iHitBody) {
+		case BODY_HEAD:
+			deathAnimation = ANIM_DIEHEADSHOT;
+			break;
+		case BODY_CHEST:
+			deathAnimation = ANIM_DIESPIN;
+			break;
+		case BODY_STOMACH:
+			deathAnimation = ANIM_DIEGUTSHOT;
+			break;
+		default:
+			bool isFacing = pl.IsFacingPosition(g_dmg_vecLocation);
+
+			/* we still want a change to play ANIM_DIESIMPLE */
+			if (random() < 0.5)
+			if (isFacing == false) {
+				deathAnimation = ANIM_DIEFORWARD;
+			} else {
+				deathAnimation = random() < 0.5 ? ANIM_DIEBACKWARDS1 : ANIM_DIEBACKWARDS1;
+			}
+
+			break;
+		}
+
+		NSEntity newCorpse = (NSEntity)FX_Corpse_Spawn((player)pl, deathAnimation);
+
+		/* if we were crouching, adjust the bbox (thx 2 lack of crouch death animation) */
+		if (pl.flags & FL_CROUCHING) {
+			newCorpse.SetSize(VEC_HULL_MIN, [16, 16, -16]);
+		}
 	}
 
 	/* now let's make the real client invisible */
@@ -142,7 +173,7 @@ HLMultiplayerRules::PlayerDeath(NSClientPlayer pl)
 	pl.gflags &= ~GF_FLASHLIGHT;
 	pl.gflags &= ~GF_EGONBEAM;
 
-	Sound_Play(pl, CHAN_AUTO, "Player.Death");
+	pl.StartSoundDef("Player.Death", CHAN_AUTO, true);
 
 	/* force respawn */
 	if (cvar("mp_forcerespawn") == 1) {
