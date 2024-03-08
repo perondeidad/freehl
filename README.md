@@ -1,15 +1,14 @@
 # FreeHL
-Clean-room reimplementation of Half-Life: Deathmatch and Half-Life (Experimental, this means Singleplayer is NOT complete).
+Este trabajo esta diseñado para funcionar principalmente con la versión de CD.
+La Steam version no funciona es su totalidad.
 
-Similar to FreeCS, this aims to recreate the feeling of the original game.
-It's designed to work with the content from the CD version of the game.
-Currently I do not aim to support the Steam version.
+Hay algunas mejoras en el Netplay , como la predicción tanto de la física del jugador como de la lógica de las armas.
 
-Netplay improvements, such as prediction of both player physics and weapon-logic
-are present.
+Este es totalmente original, siéntase libre de auditar como tu quieras.
+Nada de código de SDK privativos, no como otros proyectos similares.
 
-This is 100% original code, feel free to audit however you wish.
-No proprietary SDKs have been looked at or taken apart, unlike similar projects.
+Necesitaras el motor FTEQW (https://www.fteqw.org) para correlo, este proyecto no esta pesado
+para funcionar en otros motores derivados de Id tech 2/2.5 como Darckplaces, Qfusion, Ironwail, ETC... 
 
 ![Preview 1](img/preview1.jpg)
 ![Preview 2](img/preview2.jpg)
@@ -17,17 +16,23 @@ No proprietary SDKs have been looked at or taken apart, unlike similar projects.
 ![Preview 4](img/preview4.jpg)
 
 ## Installing 
-To run it, all you need is [FTEQW](https://www.fteqw.org) and [the latest release .pk3 file](https://www.frag-net.com/pkgs/package_valve.pk3), which you save into `Half-Life/valve/`. That's about it. You can install updates through the **Configuration > Updates** menu.
+Para correr esto, Todo lo que necesitas es [FTEQW](https://www.fteqw.org) y [La ultima versión de paquete valve .pk3](https://www.frag-net.com/pkgs/package_valve.pk3), Que guardaras en `Half-Life/valve/`. Y eso es todo. Puedes instalar actualizaciones a través del menu **Configuration > Updates**.
 
-## Building
-Clone the repository into the Nuclide-SDK and build it:
+## creación
+primero clona el repositorio de Nuclide-SDK
+
+```
+$ git clone http://github.com/veravisions/nuclide nuclide-SDK
+```
+
+Clone el repositorio valve (no te preocupes, es el mismo que el de aqui con solo algunas modificaciones menores) dentro de Nuclide-SDK y compilalo:
 
 ```
 $ git clone https://code.idtech.space/fn/valve valve
 $ SKIP_UPDATE=1 SKIP_RADIANT=1 ./build_game.sh valve
 ```
 
-You can also issue `make` inside `valve/src/`, but it won't build an `entities.def` file for use in Radiant (level editor family).
+Tambien puedes ir a `make` dentro de `valve/src/`, pero no creara un archive`entities.def`  para usar con Radiant (una familia de editores de niveles).
 
 ## Notes
 The engine should automatically detect Half-Life when placed within the game directory, however you may need to pass `-halflife` just in case you have one massive directory with multiple FTE-supported games in it for example.
@@ -48,7 +53,7 @@ and other such things. It's bridged with the Matrix room of the same name!
 ### Others
 We've had people ask in the oddest of places for help, please don't do that.
 
-## Special Thanks
+## Special Thanks (by Eukara)
 
 - Spike for FTEQW and for being the most helpful person all around!
 - Xylemon for the hundreds of test maps, verifying entity and game-logic behaviour
