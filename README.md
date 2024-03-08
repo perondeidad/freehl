@@ -15,7 +15,7 @@ para funcionar en otros motores derivados de Id tech 2/2.5 como Darckplaces, Qfu
 ![Preview 3](img/preview3.jpg)
 ![Preview 4](img/preview4.jpg)
 
-## Installing 
+## Instación
 Para correr esto, Todo lo que necesitas es [FTEQW](https://www.fteqw.org) y [La ultima versión de paquete valve .pk3](https://www.frag-net.com/pkgs/package_valve.pk3), Que guardaras en `Half-Life/valve/`. Y eso es todo. Puedes instalar actualizaciones a través del menu **Configuration > Updates**.
 
 ## creación
@@ -35,13 +35,13 @@ Obviamente, asegúrese de que Nuclide tenga preparado fteqw y fteqcc para compil
 
 Tambien puedes ir a `make` dentro de `valve/src/`, pero no creara un archivo `entities.def`  para usar con Radiant (una familia de editores de niveles).
 
-## Notes
+## Notas
 The engine should automatically detect Half-Life when placed within the game directory, however you may need to pass `-halflife` just in case you have one massive directory with multiple FTE-supported games in it for example.
 
 You can also launch mods like this: `fteqw -halflife -game cstrike`
 Useful for development, so you don't always have to use the **Custom Game** menu.
 
-## Community
+## Communidad
 
 ### Matrix
 If you're a fellow Matrix user, join the Nuclide Space to see live-updates and more!
@@ -51,7 +51,7 @@ https://matrix.to/#/#nuclide:matrix.org
 Join us on #freecs via irc.libera.chat and talk/lurk or discuss bugs, issues
 and other such things. It's bridged with the Matrix room of the same name!
 
-### Others
+### Otros
 We've had people ask in the oddest of places for help, please don't do that.
 
 ## Special Thanks (by Eukara)
@@ -62,7 +62,7 @@ We've had people ask in the oddest of places for help, please don't do that.
 - To my supporters on Patreon, who are always eager to follow what I do.
 - Any and all people trying it, tinkering with it etc. :)
 
-## License
+## Licencia
 ISC License
 
 Copyright (c) 2016-2024 Marco Hladik <marco@icculus.org>
