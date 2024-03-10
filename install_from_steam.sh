@@ -5,7 +5,7 @@ STEAMPATH="$HOME/.steam/steam/steamapps/common/Half-Life"
 OUTPK3DIR="pak0_steam.pk3dir"
 
 if ! [ -x "$(command -v rsync)" ]; then
-	printf "Error: rsync is not installed.\n" >&2
+	printf "Error: rsync no esta instalado.\n" >&2
 	exit 1
 fi
 
@@ -14,14 +14,14 @@ if [ $# -gt 0 ]; then
 	STEAMPATH="$1"
 else
 	if ! [ -f "$STEAMPATH"/valve/halflife.wad ]; then
-		printf "Path to Half-Life (STEAM) folder:\n"
+		printf "Escriba la raiz de la carpeta Half-Life (STEAM) :\n"
 		read STEAMPATH
 	fi
 fi
 
 # check before moving
 if ! [ -f "$STEAMPATH"/valve/halflife.wad ]; then
-	printf "Error: Can't figure out where Half-Life's data is.\n" >&2
+	printf "Error: No se pudo encontrar los datos de Half-Life's.\n" >&2
 	exit 1
 fi
 
