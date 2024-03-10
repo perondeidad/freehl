@@ -14,7 +14,7 @@ if [ $# -gt 0 ]; then
 	WONPATH="$1"
 else
 	if ! [ -f "$WONPATH"/valve/halflife.wad ]; then
-		printf "La raiz de Half-Life (steam):\n"
+		printf "La raiz de Half-Life (WON):\n"
 		read WONPATH
 	fi
 fi
