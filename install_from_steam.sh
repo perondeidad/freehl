@@ -29,4 +29,4 @@ mkdir -p ./$OUTPK3DIR
 rsync -av "$STEAMPATH"/valve/ ./$OUTPK3DIR/
 
 # Dangerous rm -rf'ing going on here
-printf "All done. FreeHL will be playable, but the menu will have placeholder assets.\n"
+printf "todo preparado. FreeHL sera jugable, pero los no seran del todo utilizables.\n"
